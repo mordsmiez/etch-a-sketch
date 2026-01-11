@@ -1,6 +1,7 @@
 let grid = document.querySelector("div.container");
 
 function createGrid(x) {
+    grid.replaceChildren();
     for (let i = 0; i < x; i++){
         const gridRow = document.createElement("div");
         gridRow.textContent = "";
@@ -26,8 +27,13 @@ const button = document.querySelector("button");
 
 button.addEventListener("click", (event) => {
     
-    let numberOfSquares = 16;
-    createGrid(numberOfSquares);
+    let numberOfSquares = prompt("How many squares(²) would you like your grid to have? Please enter a number between 1 and 100.");
+    if (numberOfSquares > 1 && numberOfSquares < 101){
+        createGrid(numberOfSquares);
+    }
+    else {
+        alert("Please enter a number between 1 and 100.")
+    }
 })
 
 
