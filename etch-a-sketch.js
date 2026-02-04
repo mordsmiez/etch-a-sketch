@@ -14,7 +14,9 @@ function createGrid(x) {
             gridSquare.setAttribute("style", "border-style: solid; display: flex; flex: 1; border-width: 0.01px;");    
             gridSquare.addEventListener("mouseenter", (event) => {
                 event.preventDefault();
-                gridSquare.setAttribute("style", "border-style: solid; display: flex; flex: 1; border-width: 0.01px; background-color: grey;")
+                
+                 const randomColor = `rgb(${random(255)} ${random(255)} ${random(255)})`;
+                 gridSquare.style.backgroundColor = randomColor;
             })
             gridRow.appendChild(gridSquare);
         }
@@ -37,4 +39,6 @@ button.addEventListener("click", (event) => {
 })
 
 
-
+function random(number) {
+  return Math.floor(Math.random() * number);
+}
